@@ -6,6 +6,8 @@ body {
 p {
  font-family: sans-serif;
  color: white;
+ font-size: 0.8rem;
+ line-height: 1.8;
 }
 #level-title {
   font-family: 'Press Start 2P', cursive;
@@ -14,6 +16,18 @@ p {
   color: #FEF2BF;
   line-height: 1.5;
 }
+.startButton {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  width: 40%;
+  height: 50px;
+  color: red;
+  background-color: #FEF2BF;
+  cursor:pointer;
+  margin-bottom: 10px;
+}
+
 .pixelFont {
   font-family: 'Press Start 2P', cursive;
   margin:  1% 5%;

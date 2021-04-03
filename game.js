@@ -5,7 +5,15 @@ var buttonColor;
 var userClickedPattern= [];
 var userChosenColor;
 var gameStart=0;
-var level=0;
+var level=1;
+//starting the game fucntion
+    $(".startButton").on("click", function() {
+      if(gameStart==0)
+      {
+        gameStart++;
+        nextSequence();
+      }});
+
 // Matching the user's input to generated gamePattern to restart/continue/end game
 function checkAnswer(index) {
   if(userClickedPattern[index]==gamePattern[index])
@@ -22,13 +30,13 @@ function checkAnswer(index) {
   {
     var gameOverSound= new Audio("sounds/wrong.mp3");
     gameOverSound.play();
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    $("#level-title").text("Game Over, Press START to Play Again");
     $("body").addClass("game-over");
     setTimeout(function() {
       $("body").removeClass("game-over");
     }, 200);
     gameStart=0;
-    level=0;
+    level=1;
     gamePattern=[];
     userClickedPattern=[];
   }
@@ -58,17 +66,3 @@ $(".btn").on("click", function(event) {
     checkAnswer(userClickedPattern.length-1);
   });
 // to start the game
-$(document).on("dblclick", function(){
-  if(gameStart==0)
-  {
-    gameStart++;
-    nextSequence();
-  }
-});
-$(document).on("keypress", function(){
-  if(gameStart==0)
-  {
-    gameStart++;
-    nextSequence();
-  }
-});
